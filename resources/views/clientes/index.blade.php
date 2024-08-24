@@ -10,18 +10,38 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            height: 100vh;
             background: linear-gradient(to right, #f8a170, #fdc173), url('/public/img/beautiful-sunset.jpg') no-repeat center center fixed;
             background-size: cover;
             color: #fff;
         }
 
-        .header {
+        .card_table {
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+        }
+        .card_inside{
             text-align: center;
-            padding: 10px 20px;
-            background-image: url('/public/img/beautiful-sunset.jpg');
+            max-width: 80%;
+            background-color: #25323f;
             background-size: cover;
             background-position: center;
             border-radius: 10px;
+        }
+        .header {
+            text-align: center;
+            padding: 20px 10px;
+            background-image: url("{{ asset('img/maxresdefault (3).jpg') }}");
+            background-color: rgba(255, 255, 255, 0.671);
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(50px);
+
         }
 
         .header h1 {
@@ -158,7 +178,9 @@
         <h1>Bienvenidos al Hotel Paraíso</h1>
         <p>Disfruta de una estancia de lujo con vistas increíbles y un servicio excepcional.</p>
         <a href="{{ route('clientes.create') }}" class="btn-clientes">¡Reserva ahora!</a>
-        <section class="header">
+    </header>
+    <section class="card_table">
+        <div class="card_inside">
             <h2>Reservas realizadas</h2>
             <p>En Hotel Paraíso, nos esforzamos por ofrecer una experiencia inolvidable a todos nuestros huéspedes.</p>
             <div class="">
@@ -210,6 +232,7 @@
                     </tbody>
                 </table>
             </div>
+        </div>
     </section>
 
     <section class="about">
